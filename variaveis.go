@@ -4,11 +4,10 @@ import "fmt"
 
 import "reflect"
 
-// Aula 02 (Declaração de variavel)
+// Aula 02 Variaveis
 func variaveis() {
 	/* Primeiro declarar como váriavel, depois dar um nome para mesma e por último mostrar o tipo (Em caso de String, int e boolean não é necessário declarar o tipo,
 	pois o Go consegue saber qual o tipo de váriavel pela sua sintaxe, com o float isso também é possivel mas ele sempre vai usar o float64) */
-
 	var nome = "Douglas"
 
 	// Caso você não declare um valor para váriavel ela vai ser inicializada automaticamente como vazio (Caso int = 0, caso String = "", Caso Float = 0.0)

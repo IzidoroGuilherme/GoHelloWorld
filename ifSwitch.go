@@ -12,6 +12,19 @@ func main() {
 
 	comando := leComando()
 
+	// No Go não é necessário utilizar parentes no if
+	/*
+		if comando == 1 {
+			fmt.Println("Monitorando")
+		} else if comando == 2 {
+			fmt.Println("Exibindo Logs ...")
+		} else if comando == 0 {
+			fmt.Println("Saindo do programa")
+		} else {
+			fmt.Println("Não conheço esse comando")
+		}
+	*/
+
 	// Operador switch: O Go não necessita do colocar o break no seu switch
 	switch comando {
 	case 1:
