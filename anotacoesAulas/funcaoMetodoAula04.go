@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func main() {
+func requisicaoEMetodos() {
 	exibeIntroducao()
 
 	// For do Go, quando não tem nenhum parêmtro, roda em looping até um break

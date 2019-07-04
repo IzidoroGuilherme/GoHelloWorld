@@ -4,7 +4,7 @@ import "fmt"
 
 import "os"
 
-func main() {
+func testeIF() {
 
 	exibeIntroducao()
 
