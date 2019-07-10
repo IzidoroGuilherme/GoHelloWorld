@@ -4,7 +4,12 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"time"
 )
+
+const monitoramentos = 3
+
+const tempoDelay = 5
 
 func main() {
 	exibeIntroducao()
@@ -63,7 +68,25 @@ func leComando() int {
 
 func iniciarMonitoramento() {
 	fmt.Println("Monitorando")
-	site := "https://random-status-code.herokuapp.com/"
+
+	// Slice criado com os sites que serão monitorados
+	sites := []string{"https://random-status-code.herokuapp.com/", "https://alura.com.br/", "https://my.4bee.com.br/"}
+
+	// Criando o for, para ele testar mais de uma vez
+	for i := 0; i < monitoramentos; i++ {
+		// for melhorado para percorrer um slice, ele pega a item a item
+		for i, site := range sites {
+			fmt.Println("Testando o site ", i, ": ", site)
+			testaSite(site)
+		}
+		time.Sleep(tempoDelay * time.Second)
+		fmt.Println("")
+	}
+
+	fmt.Println("")
+}
+
+func testaSite(site string) {
 	// No Go algumas funcções pode retornar mais de um valor como a http.get, que devolve resposta e erro
 	resp, _ := http.Get(site)
 
@@ -73,5 +96,4 @@ func iniciarMonitoramento() {
 	} else {
 		fmt.Println("Site: ", site, "esta com problemas. Status Code: ", resp.StatusCode)
 	}
-
 }
